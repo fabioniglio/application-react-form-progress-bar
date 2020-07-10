@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress, {
   LinearProgressProps,
@@ -10,8 +10,8 @@ function LinearProgressWithLabel(
   props: LinearProgressProps & { value: number },
 ) {
   return (
-    <Box display="flex" alignItems="center" justifyContent="center">
-      <Box width="90%" mr={1}>
+    <Box display="flex" alignItems="center">
+      <Box width="100%" mr={1}>
         <LinearProgress variant="determinate" {...props} />
       </Box>
       <Box minWidth={35}>
@@ -25,17 +25,15 @@ function LinearProgressWithLabel(
 
 const useStyles = makeStyles({
   root: {
-    width: '90%',
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: '100%',
   },
 });
 
 export default function LinearWithValueLabel() {
   const classes = useStyles();
-  const [progress, setProgress] = useState(10);
+  const [progress, setProgress] = React.useState(10);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timer = setInterval(() => {
       setProgress(prevProgress =>
         prevProgress >= 100 ? 10 : prevProgress + 10,

@@ -1,14 +1,13 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import LinearWithValueLabel from './component/ProgressBar';
+import Routes from './routes';
 
 function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-      <br />
-      <LinearWithValueLabel />
-    </>
+    <Router>
+      <Routes />
+    </Router>
   );
 }
 
