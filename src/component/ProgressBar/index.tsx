@@ -39,7 +39,14 @@ export default function LinearWithValueLabel() {
 
   useEffect(() => {
     console.log(form);
-    setProgress((form.step / form.maxSteps) * 100);
+    let progress = (form.step / form.maxSteps) * 100;
+    setProgress(progress >= 100 ? 100 : progress);
+    if (form.step >= 7) {
+      formUpdate({
+        ...form,
+        step: 0,
+      });
+    }
   }, [formUpdate, form]);
 
   return (

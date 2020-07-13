@@ -1,35 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FormName from '../FormName';
 import FormEmail from '../FormEmail';
 import Formphone from '../FormPhone';
+import Formsalary from '../FormSalary';
+import Confirm from '../Confirm';
+import Success from '../Success';
+import Welcome from '../Welcome';
 
 import { useForm } from '../../hooks/FormContext';
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  step: number;
-}
 
 const Form: React.FC = () => {
   const { form } = useForm();
 
   switch (form.step) {
+    case 0:
+      return <Welcome />;
+
     case 1:
       return <FormName />;
-      break;
 
     case 2:
       return <FormEmail />;
-      break;
+
     case 3:
       return <Formphone />;
-      break;
+
+    case 4:
+      return <Formsalary />;
+
+    case 5:
+      return <Confirm />;
+
+    case 6:
+      return <Success />;
 
     default:
-      return <h1>Test</h1>;
-      break;
+      return <FormName />;
   }
 };
 

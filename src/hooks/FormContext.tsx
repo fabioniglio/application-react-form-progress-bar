@@ -27,7 +27,7 @@ export const FormProvider: React.FC = ({ children }) => {
       email: '',
       phone: '',
       salary: '',
-      step: 1,
+      step: 0,
       maxSteps: 5,
     },
   } as FormState);

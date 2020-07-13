@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
-const FormName: React.FC = () => {
+const Formsalary: React.FC = () => {
   const { form, formUpdate } = useForm();
   const nextStep = () => {
     let { step } = form;
@@ -18,17 +18,17 @@ const FormName: React.FC = () => {
 
     formUpdate({
       ...form,
-      name: target.value,
+      salary: target.value,
     });
     console.log(form);
   };
 
   return (
     <>
-      <input type="text" placeholder="Name" onChange={handleChange} />
+      <input type="text" placeholder="Salary" onChange={handleChange} />
       <button onClick={nextStep}>Next</button>
     </>
   );
 };
 
-export default FormName;
+export default Formsalary;
