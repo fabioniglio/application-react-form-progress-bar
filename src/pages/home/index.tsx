@@ -11,10 +11,6 @@ interface FormData {
 }
 
 const Home: React.FC = () => {
-  const [progress, setProgress] = useState(0);
-  const [form, setForm] = useState<FormData>();
-  const [step, setStep] = useState(1);
-
   return (
     <>
       <h1>Form</h1>
