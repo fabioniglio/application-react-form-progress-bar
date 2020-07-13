@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress, {
   LinearProgressProps,
 } from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import { useForm } from '../../hooks/FormContext';
 
 function LinearProgressWithLabel(
   props: LinearProgressProps & { value: number },
@@ -30,19 +32,15 @@ const useStyles = makeStyles({
 });
 
 export default function LinearWithValueLabel() {
-  const classes = useStyles();
-  const [progress, setProgress] = React.useState(10);
+  const { form, formUpdate } = useForm();
 
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress(prevProgress =>
-        prevProgress >= 100 ? 10 : prevProgress + 10,
-      );
-    }, 800);
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+  const classes = useStyles();
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    console.log(form);
+    setProgress((form.step / form.maxSteps) * 100);
+  }, [formUpdate, form]);
 
   return (
     <div className={classes.root}>

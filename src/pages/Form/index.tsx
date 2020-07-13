@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import FormName from '../FormName';
+import FormEmail from '../FormEmail';
+import Formphone from '../FormPhone';
+
+import { useForm } from '../../hooks/FormContext';
 
 interface FormData {
   name: string;
@@ -8,34 +13,18 @@ interface FormData {
 }
 
 const Form: React.FC = () => {
-  const [progress, setProgress] = useState(0);
-  const [form, setForm] = useState<FormData>();
-  const [step, setStep] = useState(1);
+  const { form } = useForm();
 
-  const handleProgressBar = () => {
-    setProgress(prevProgress => (prevProgress >= 100 ? 10 : prevProgress + 10));
-    console.log(progress);
-    setStep(prevStep => (prevStep >= 2 ? 1 : prevStep + 1));
-    console.log(step);
-  };
-
-  switch (step) {
+  switch (form.step) {
     case 1:
-      return (
-        <>
-          <input type="text" placeholder="name" />
-          <button onClick={handleProgressBar}>Increase</button>
-        </>
-      );
+      return <FormName />;
       break;
 
     case 2:
-      return (
-        <>
-          <input type="text" placeholder="email" />
-          <button onClick={handleProgressBar}>Increase</button>
-        </>
-      );
+      return <FormEmail />;
+      break;
+    case 3:
+      return <Formphone />;
       break;
 
     default:
