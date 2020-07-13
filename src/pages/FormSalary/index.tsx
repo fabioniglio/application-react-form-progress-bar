@@ -25,7 +25,52 @@ const Formsalary: React.FC = () => {
 
   return (
     <>
-      <input type="text" placeholder="Salary" onChange={handleChange} />
+      <div className="RadioButton">
+        <input
+          name={'salary'}
+          type="radio"
+          value={'0 - 1.000'}
+          onChange={handleChange}
+        />
+        <label htmlFor="">0 - 1.000</label>
+      </div>
+      <div className="RadioButton">
+        <input
+          name={'salary'}
+          type="radio"
+          value={'1.000 - 2.000'}
+          onChange={handleChange}
+        />
+        <label htmlFor="">1.000 - 2.000</label>
+      </div>
+      <div className="RadioButton">
+        <input
+          name={'salary'}
+          type="radio"
+          value={'2.000 - 3.000'}
+          onChange={handleChange}
+        />
+        <label htmlFor="">2.000 - 3.000</label>
+      </div>
+      <div className="RadioButton">
+        <input
+          name={'salary'}
+          type="radio"
+          value={'3.000 - 4.000'}
+          onChange={handleChange}
+        />
+        <label htmlFor="">3.000 - 4.000</label>
+      </div>
+      <div className="RadioButton">
+        <input
+          name={'salary'}
+          type="radio"
+          value={'Mehr als 4.000'}
+          onChange={handleChange}
+        />
+        <label htmlFor="">Mehr als 4.000</label>
+      </div>
+
       <button onClick={nextStep}>Next</button>
     </>
   );

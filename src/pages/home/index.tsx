@@ -1,14 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import LinearWithValueLabel from '../../component/ProgressBar';
 
 import Form from '../Form';
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-}
 
 const Home: React.FC = () => {
   return (

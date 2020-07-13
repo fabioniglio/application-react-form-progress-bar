@@ -25,7 +25,7 @@ const FormName: React.FC = () => {
 
   return (
     <>
-      <input type="text" placeholder="Name" onChange={handleChange} />
+      <input type="text" placeholder="Full Name" onChange={handleChange} />
       <button onClick={nextStep}>Next</button>
     </>
   );
