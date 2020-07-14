@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
+import { InputControlText } from '../../component/Input';
+
 const Formphone: React.FC = () => {
   const { form, formUpdate } = useForm();
   const nextStep = () => {
@@ -25,7 +27,14 @@ const Formphone: React.FC = () => {
 
   return (
     <>
-      <input type="text" placeholder="Phone" onChange={handleChange} />
+      <InputControlText
+        id="phone"
+        name="phone"
+        type="phone"
+        placeholder="Phone"
+        required={true}
+        onChange={handleChange}
+      />
       <button onClick={nextStep}>Next</button>
     </>
   );
