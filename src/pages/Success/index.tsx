@@ -4,6 +4,8 @@ import { useForm } from '../../hooks/FormContext';
 
 import { Container, AnimationContainer } from './styles';
 
+import Button from '../../component/Button';
+
 const Confirm: React.FC = () => {
   const { form, formUpdate } = useForm();
   const goHome = () => {
@@ -25,7 +27,7 @@ const Confirm: React.FC = () => {
         <h2>Success!</h2>
         <h3>Thank you for submitting</h3>
 
-        <button onClick={goHome}>Back to Home</button>
+        <Button onClick={goHome}>Back to Home</Button>
       </Container>
     </AnimationContainer>
   );

@@ -39,6 +39,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
   justify-content: center;
   margin-top: auto 20px 0 0;
 

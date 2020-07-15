@@ -4,6 +4,8 @@ import { useForm } from '../../hooks/FormContext';
 
 import { Container, AnimationContainer } from './styles';
 
+import Button from '../../component/Button';
+
 const Confirm: React.FC = () => {
   const { form, formUpdate } = useForm();
   const enterForm = () => {
@@ -21,7 +23,7 @@ const Confirm: React.FC = () => {
         <h1>Welcome!</h1>
         <p>Click on the button to start filling the form!</p>
 
-        <button onClick={enterForm}>Start</button>
+        <Button onClick={enterForm}>Start</Button>
       </AnimationContainer>
     </Container>
   );

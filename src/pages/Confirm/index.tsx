@@ -4,6 +4,8 @@ import { useForm } from '../../hooks/FormContext';
 
 import { Container, AnimationContainer, Content } from './styles';
 
+import Button from '../../component/Button';
+
 const Confirm: React.FC = () => {
   const { form, formUpdate } = useForm();
   const confirm = () => {
@@ -35,7 +37,7 @@ const Confirm: React.FC = () => {
           <h3>{form.salary}</h3>
         </Content>
 
-        <button onClick={confirm}>Confirm</button>
+        <Button onClick={confirm}>Confirm</Button>
       </Container>
     </AnimationContainer>
   );

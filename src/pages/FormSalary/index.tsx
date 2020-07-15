@@ -4,6 +4,8 @@ import { useForm } from '../../hooks/FormContext';
 
 import { Container, AnimationContainer } from './styles';
 
+import Button from '../../component/Button';
+
 const Formsalary: React.FC = () => {
   const { form, formUpdate } = useForm();
   const nextStep = () => {
@@ -74,7 +76,7 @@ const Formsalary: React.FC = () => {
           <label htmlFor="">Mehr als 4.000</label>
         </div>
 
-        <button onClick={nextStep}>Next</button>
+        <Button onClick={nextStep}>Next</Button>
       </Container>
     </AnimationContainer>
   );

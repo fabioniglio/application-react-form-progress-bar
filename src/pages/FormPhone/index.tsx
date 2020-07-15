@@ -6,6 +6,8 @@ import { InputControlText } from '../../component/Input';
 
 import { Container, AnimationContainer } from './styles';
 
+import Button from '../../component/Button';
+
 const Formphone: React.FC = () => {
   const { form, formUpdate } = useForm();
   const nextStep = () => {
@@ -28,8 +30,8 @@ const Formphone: React.FC = () => {
   };
 
   return (
-    <Container>
-      <AnimationContainer>
+    <AnimationContainer>
+      <Container>
         <InputControlText
           id="phone"
           name="phone"
@@ -38,9 +40,9 @@ const Formphone: React.FC = () => {
           required={true}
           onChange={handleChange}
         />
-        <button onClick={nextStep}>Next</button>
-      </AnimationContainer>
-    </Container>
+        <Button onClick={nextStep}>Next</Button>
+      </Container>
+    </AnimationContainer>
   );
 };
 

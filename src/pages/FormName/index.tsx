@@ -6,6 +6,8 @@ import { InputControlText } from '../../component/Input';
 
 import { Container, AnimationContainer } from './styles';
 
+import Button from '../../component/Button';
+
 const FormName: React.FC = () => {
   const { form, formUpdate } = useForm();
   const [error, setError] = useState(false);
@@ -56,7 +58,7 @@ const FormName: React.FC = () => {
           onChange={handleChange}
         />
         {error && <span>Missing Name</span>}
-        <button onClick={nextStep}>Next</button>
+        <Button onClick={nextStep}>Next</Button>
       </Container>
     </AnimationContainer>
   );
