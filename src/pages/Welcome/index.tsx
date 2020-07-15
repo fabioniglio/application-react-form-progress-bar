@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
+import { Container, AnimationContainer } from './styles';
+
 const Confirm: React.FC = () => {
   const { form, formUpdate } = useForm();
   const enterForm = () => {
@@ -14,12 +16,14 @@ const Confirm: React.FC = () => {
   };
 
   return (
-    <>
-      <h2>Welcome!</h2>
-      <p>Click on the button to start filling the form</p>
+    <Container>
+      <AnimationContainer>
+        <h1>Welcome!</h1>
+        <p>Click on the button to start filling the form</p>
 
-      <button onClick={enterForm}>Start</button>
-    </>
+        <button onClick={enterForm}>Start</button>
+      </AnimationContainer>
+    </Container>
   );
 };
 
