@@ -23,27 +23,30 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  h1 {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  p {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    justify-content: center;
-    align-items: center;
-  }
+  margin-top: 20px;
 
   button {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    justify-content: center;
+
     align-items: center;
+    justify-content: center;
+  }
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto 20px 0 0;
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  h3 {
+    margin-top: 10px;
   }
 `;

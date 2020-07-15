@@ -23,27 +23,16 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  h1 {
-    display: flex;
-    flex-direction: column;
+  input {
     margin-top: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  p {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    justify-content: center;
-    align-items: center;
   }
 
   button {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    justify-content: center;
+
     align-items: center;
+    justify-content: center;
   }
 `;

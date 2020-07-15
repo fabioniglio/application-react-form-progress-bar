@@ -4,6 +4,8 @@ import { useForm } from '../../hooks/FormContext';
 
 import { InputControlText } from '../../component/Input';
 
+import { Container, AnimationContainer } from './styles';
+
 const FormName: React.FC = () => {
   const { form, formUpdate } = useForm();
   const [error, setError] = useState(false);
@@ -43,18 +45,20 @@ const FormName: React.FC = () => {
   };
 
   return (
-    <>
-      <InputControlText
-        id="name"
-        name="name"
-        type="text"
-        required={true}
-        placeholder="Full Name"
-        onChange={handleChange}
-      />
-      {error && <span>Missing Name</span>}
-      <button onClick={nextStep}>Next</button>
-    </>
+    <AnimationContainer>
+      <Container>
+        <InputControlText
+          id="name"
+          name="name"
+          type="text"
+          required={true}
+          placeholder="Full Name"
+          onChange={handleChange}
+        />
+        {error && <span>Missing Name</span>}
+        <button onClick={nextStep}>Next</button>
+      </Container>
+    </AnimationContainer>
   );
 };
 

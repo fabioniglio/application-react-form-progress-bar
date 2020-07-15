@@ -4,6 +4,8 @@ import { useForm } from '../../hooks/FormContext';
 
 import { InputControlText } from '../../component/Input';
 
+import { Container, AnimationContainer } from './styles';
+
 const FormEmail: React.FC = () => {
   const { form, formUpdate } = useForm();
   const [error, setError] = useState(false);
@@ -41,18 +43,20 @@ const FormEmail: React.FC = () => {
   };
 
   return (
-    <>
-      <InputControlText
-        id="name"
-        name="email"
-        type="email"
-        placeholder="E-mail"
-        required={true}
-        onChange={handleChange}
-      />
-      {error && <span>Missing Email</span>}
-      <button onClick={nextStep}>Next</button>
-    </>
+    <AnimationContainer>
+      <Container>
+        <InputControlText
+          id="name"
+          name="email"
+          type="email"
+          placeholder="E-mail"
+          required={true}
+          onChange={handleChange}
+        />
+        {error && <span>Missing Email</span>}
+        <button onClick={nextStep}>Next</button>
+      </Container>
+    </AnimationContainer>
   );
 };
 
