@@ -5,12 +5,15 @@ import Routes from './routes';
 
 import AppProvider from './hooks';
 
+import GlobalStyle from './styles/global';
+
 function App() {
   return (
     <AppProvider>
       <Router>
         <Routes />
       </Router>
+      <GlobalStyle />
     </AppProvider>
   );
 }

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { InputControl } from '../Inputcontrol';
+
+import { Container } from './styles';
 
 export interface Props {
   id: string;
