@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
-import { InputControl } from '../Inputcontrol';
-
-import { Container } from './styles';
+import { Container, Input } from './styles';
 
 export interface Props {
   id: string;
@@ -10,10 +10,10 @@ export interface Props {
   value?: string;
   label?: string;
   type?: 'text' | 'email' | 'phone';
-  status?: 'success' | 'danger';
+
   placeholder?: string;
   required?: boolean;
-  errors?: string;
+  errors?: boolean;
   valid?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -26,7 +26,7 @@ export const InputControlText = (props: Props): JSX.Element => {
     placeholder,
     type,
     name,
-    status,
+
     errors,
     valid,
     onChange,
@@ -47,13 +47,7 @@ export const InputControlText = (props: Props): JSX.Element => {
 
   return (
     <Container isErrored={!!errors} isFilled={isFilled} isFocused={isFocused}>
-      <InputControl
-        id={id}
-        type={type}
-        status={status}
-        errors={errors}
-        valid={valid}
-      >
+      {type !== 'phone' && (
         <input
           id={name}
           name={name}
@@ -63,9 +57,25 @@ export const InputControlText = (props: Props): JSX.Element => {
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
           required={required}
-          {...{ noValidate: true }}
         />
-      </InputControl>
+      )}
+      {type === 'phone' && (
+        <PhoneInput
+          country="de"
+          regions={'europe'}
+          searchStyle={{ background: '#232129' }}
+          buttonStyle={{ background: '#232129' }}
+          dropdownStyle={{ background: '#232129' }}
+          containerStyle={{ background: '#232129' }}
+          inputStyle={{
+            flex: 1,
+            border: 0,
+            background: '#232129',
+            // color: '#f4ede8',
+            width: '100%',
+          }}
+        />
+      )}
     </Container>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
-import { Container, AnimationContainer } from './styles';
+import { Container, AnimationContainer, Title } from './styles';
 
 import Button from '../../component/Button';
 
@@ -30,6 +30,7 @@ const Formsalary: React.FC = () => {
   return (
     <AnimationContainer>
       <Container>
+        <Title>What is your salary range?</Title>
         <div className="RadioButton">
           <input
             name={'salary'}

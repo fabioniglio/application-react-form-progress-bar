@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
 import { InputControlText } from '../../component/Input';
 
-import { Container, AnimationContainer } from './styles';
+import { Container, AnimationContainer, Title } from './styles';
 
 import Button from '../../component/Button';
 
 const FormName: React.FC = () => {
   const { form, formUpdate } = useForm();
   const [error, setError] = useState(false);
+
   const nextStep = () => {
     const validate = validateInput();
 
@@ -49,13 +50,16 @@ const FormName: React.FC = () => {
   return (
     <AnimationContainer>
       <Container>
+        <Title>What is your Full Name?</Title>
         <InputControlText
           id="name"
           name="name"
           type="text"
+          value={form.name}
           required={true}
           placeholder="Full Name"
           onChange={handleChange}
+          errors={error}
         />
         {error && <span>Missing Name</span>}
         <Button onClick={nextStep}>Next</Button>

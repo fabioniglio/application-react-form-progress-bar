@@ -14,7 +14,7 @@ export const Container = styled.div<ContainerProps>`
 
   padding: 16px;
   width: 50%;
-  height: 30%;
+
 
   border: 2px solid #233129;
   color: #636360;
@@ -61,4 +61,16 @@ export const Container = styled.div<ContainerProps>`
     svg {
       margin-right: 16px;
     }
+`;
+
+export const Input = styled.div`
+  input {
+    flex: 1;
+    background: transparent;
+    border: 0;
+    color: #f4ede8;
+    &::placeholder {
+      color: #636360;
+    }
+  }
 `;

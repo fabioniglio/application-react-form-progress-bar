@@ -16,6 +16,12 @@ export const AnimationContainer = styled.div`
   animation: ${appearFromRight} 1s;
 `;
 
+export const Title = styled.div`
+  font-size: 30px;
+  color: #204051;
+  margin-bottom: 10px;
+`;
+
 export const Container = styled.div`
   display: flex;
   width: 100%;
@@ -24,10 +30,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  input {
-    margin-top: 20px;
-  }
-
   button {
     display: flex;
     flex-direction: column;
@@ -35,5 +37,10 @@ export const Container = styled.div`
     width: 50%;
     align-items: center;
     justify-content: center;
+  }
+
+  span {
+    margin-top: 10px;
+    color: #c53030;
   }
 `;
