@@ -16,7 +16,11 @@ export interface Props {
   errors?: boolean;
   valid?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onChangePhone?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangePhone?: (
+    value: string,
+    data: {},
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => void;
 }
 
 export const InputControlText = (props: Props): JSX.Element => {
@@ -64,7 +68,7 @@ export const InputControlText = (props: Props): JSX.Element => {
         <PhoneInput
           country="de"
           regions={'europe'}
-          // onChange={handleChangeNumber}
+          onChange={onChangePhone}
           searchStyle={{ background: '#232129' }}
           buttonStyle={{ background: '#232129' }}
           dropdownStyle={{ background: '#232129' }}

@@ -37,7 +37,6 @@ const Formphone: React.FC = () => {
     e: React.FormEvent<HTMLInputElement>,
     data: {},
     value: string,
-    phoneFormatted: string,
   ) => {
     const target = e.target as HTMLTextAreaElement;
 
@@ -60,6 +59,7 @@ const Formphone: React.FC = () => {
           value={form.phone}
           placeholder="Phone"
           required={true}
+          onChange={handleChange}
         />
 
         <ButtonContainer>
