@@ -59,7 +59,7 @@ const Formphone: React.FC = () => {
           value={form.phone}
           placeholder="Phone"
           required={true}
-          onChange={handleChange}
+          onChangePhone={handleChange}
         />
 
         <ButtonContainer>
