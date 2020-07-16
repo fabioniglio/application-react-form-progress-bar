@@ -68,6 +68,7 @@ export const InputControlText = (props: Props): JSX.Element => {
         <PhoneInput
           country="de"
           regions={'europe'}
+          value={value}
           onChange={onChangePhone}
           searchStyle={{ background: '#232129' }}
           buttonStyle={{ background: '#232129' }}

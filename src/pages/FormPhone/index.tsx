@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
@@ -33,13 +33,15 @@ const Formphone: React.FC = () => {
     });
   };
 
+  // const handlechangeCall = useCallback(() => {
+
   const handleChange = (
-    e: React.FormEvent<HTMLInputElement>,
-    data: {},
     value: string,
+    data: {},
+    e: React.FormEvent<HTMLInputElement>,
   ) => {
     const target = e.target as HTMLTextAreaElement;
-
+    console.log(target);
     formUpdate({
       ...form,
       phone: target.value,
