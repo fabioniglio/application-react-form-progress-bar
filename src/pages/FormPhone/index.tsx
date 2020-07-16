@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
@@ -15,6 +15,7 @@ import Button from '../../component/Button';
 
 const Formphone: React.FC = () => {
   const { form, formUpdate } = useForm();
+
   const nextStep = () => {
     let { step } = form;
     console.log(step);
@@ -32,13 +33,19 @@ const Formphone: React.FC = () => {
     });
   };
 
-  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.FormEvent<HTMLInputElement>,
+    data: {},
+    value: string,
+    phoneFormatted: string,
+  ) => {
     const target = e.target as HTMLTextAreaElement;
 
     formUpdate({
       ...form,
       phone: target.value,
     });
+
     console.log(form);
   };
 
@@ -50,9 +57,9 @@ const Formphone: React.FC = () => {
           id="phone"
           name="phone"
           type="phone"
+          value={form.phone}
           placeholder="Phone"
           required={true}
-          onChange={handleChange}
         />
 
         <ButtonContainer>
