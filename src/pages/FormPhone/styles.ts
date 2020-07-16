@@ -29,11 +29,6 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  span {
-    margin-top: 10px;
-    color: #c53030;
-  }
 `;
 
 export const ButtonContainer = styled.div`

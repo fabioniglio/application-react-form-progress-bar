@@ -31,6 +31,7 @@ export const Container = styled.div`
 
   div {
     margin-top: 20px;
+    width: 'auto';
   }
 
   label {
@@ -45,9 +46,16 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
   }
+`;
 
-  span {
-    margin-top: 10px;
-    color: #c53030;
-  }
+export const RadioGroup = styled.div`
+  width: 'auto';
+`;
+
+export const ButtonContainer = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  justify-content: space-between;
 `;

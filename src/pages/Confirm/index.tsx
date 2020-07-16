@@ -37,7 +37,7 @@ const Confirm: React.FC = () => {
           <h3>{form.salary}</h3>
         </Content>
 
-        <Button onClick={confirm}>Confirm</Button>
+        <Button text={'Confirm'} onClick={confirm} />
       </Container>
     </AnimationContainer>
   );

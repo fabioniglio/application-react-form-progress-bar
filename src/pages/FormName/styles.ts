@@ -19,7 +19,7 @@ export const AnimationContainer = styled.div`
 export const Title = styled.div`
   font-size: 30px;
   color: #204051;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 `;
 
 export const Container = styled.div`
@@ -33,14 +33,13 @@ export const Container = styled.div`
   button {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 24px;
     width: 50%;
     align-items: center;
     justify-content: center;
   }
 
   span {
-    margin-top: 10px;
     color: #c53030;
   }
 `;

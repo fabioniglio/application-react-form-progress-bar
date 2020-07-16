@@ -3,18 +3,18 @@ import React, { ButtonHTMLAttributes } from 'react';
 import { Container } from './styles';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  loading?: boolean;
+  text?: string;
   typeButton?: 'next' | 'back' | undefined;
 };
 
 const Button: React.FC<ButtonProps> = ({
   children,
-  loading,
+  text,
   typeButton,
   ...rest
 }) => (
   <Container typeButton={typeButton} type="button" {...rest}>
-    {loading ? 'Loading...' : children}
+    <span>{text}</span>
   </Container>
 );
 

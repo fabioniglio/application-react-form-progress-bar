@@ -1,5 +1,5 @@
 import Styled, { css } from 'styled-components';
-import { shade, backgrounds } from 'polished';
+import { shade } from 'polished';
 
 interface ContainerProps {
   typeButton: 'next' | 'back' | undefined;
@@ -17,17 +17,18 @@ export const Container = Styled.button<ContainerProps>`
       margin-top: 16px;
       transition: background-color 0.2s;
 
-      &:hover {
-        background: ${shade(0.2, '#52796f')};
+      span {
+        color: white;
       }
+
 
       ${props =>
         props.typeButton === 'next' &&
         css`
-          background: #52796f;
+          background: #002f34;
 
           &:hover {
-            background: ${shade(0.2, '#52796f')};
+            background: ${shade(0.2, '#002f34')};
           }
         `}
 
@@ -43,10 +44,10 @@ export const Container = Styled.button<ContainerProps>`
           ${props =>
             props.typeButton === undefined &&
             css`
-              background: #52796f;
+              background: #002f34;
 
               &:hover {
-                background: ${shade(0.2, '#52796f')};
+                background: ${shade(0.2, '#002f34')};
               }
             `}
 

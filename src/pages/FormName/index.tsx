@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
@@ -62,7 +62,7 @@ const FormName: React.FC = () => {
           errors={error}
         />
         {error && <span>Missing Name</span>}
-        <Button onClick={nextStep}>Next</Button>
+        <Button text={'Next'} onClick={nextStep} />
       </Container>
     </AnimationContainer>
   );

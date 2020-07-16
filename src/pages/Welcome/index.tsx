@@ -23,7 +23,7 @@ const Confirm: React.FC = () => {
         <h1>Welcome!</h1>
         <p>Click on the button to start filling the form!</p>
 
-        <Button onClick={enterForm}>Start</Button>
+        <Button text={'Start'} onClick={enterForm} />
       </AnimationContainer>
     </Container>
   );

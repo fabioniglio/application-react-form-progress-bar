@@ -13,6 +13,13 @@ import {
 
 import Button from '../../component/Button';
 
+interface CountryData {
+  name: string;
+  dialCode: string;
+  countryCode: string;
+  format: string;
+}
+
 const Formphone: React.FC = () => {
   const { form, formUpdate } = useForm();
 
@@ -33,15 +40,19 @@ const Formphone: React.FC = () => {
     });
   };
 
-  // const handlechangeCall = useCallback(() => {
-
   const handleChange = (
     value: string,
-    data: {},
+    data: CountryData | {},
     e: React.FormEvent<HTMLInputElement>,
   ) => {
+    e.persist();
+    console.log(value);
+    console.log(data);
     const target = e.target as HTMLTextAreaElement;
     console.log(target);
+    if (target === null) {
+      return;
+    }
     formUpdate({
       ...form,
       phone: target.value,
@@ -65,12 +76,8 @@ const Formphone: React.FC = () => {
         />
 
         <ButtonContainer>
-          <Button typeButton="back" onClick={previousStep}>
-            Back
-          </Button>
-          <Button typeButton="next" onClick={nextStep}>
-            Next
-          </Button>
+          <Button text={'Back'} typeButton="back" onClick={previousStep} />
+          <Button text={'Next'} typeButton="next" onClick={nextStep} />
         </ButtonContainer>
       </Container>
     </AnimationContainer>

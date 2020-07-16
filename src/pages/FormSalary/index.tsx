@@ -2,7 +2,13 @@ import React from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
-import { Container, AnimationContainer, Title } from './styles';
+import {
+  Container,
+  AnimationContainer,
+  Title,
+  RadioGroup,
+  ButtonContainer,
+} from './styles';
 
 import Button from '../../component/Button';
 
@@ -14,6 +20,14 @@ const Formsalary: React.FC = () => {
     formUpdate({
       ...form,
       step: step + 1,
+    });
+  };
+
+  const previousStep = () => {
+    let { step } = form;
+    formUpdate({
+      ...form,
+      step: step - 1,
     });
   };
 
@@ -31,53 +45,57 @@ const Formsalary: React.FC = () => {
     <AnimationContainer>
       <Container>
         <Title>What is your salary range?</Title>
-        <div className="RadioButton">
-          <input
-            name={'salary'}
-            type="radio"
-            value={'0 - 1.000'}
-            onChange={handleChange}
-          />
-          <label htmlFor="">0 - 1.000</label>
-        </div>
-        <div className="RadioButton">
-          <input
-            name={'salary'}
-            type="radio"
-            value={'1.000 - 2.000'}
-            onChange={handleChange}
-          />
-          <label htmlFor="">1.000 - 2.000</label>
-        </div>
-        <div className="RadioButton">
-          <input
-            name={'salary'}
-            type="radio"
-            value={'2.000 - 3.000'}
-            onChange={handleChange}
-          />
-          <label htmlFor="">2.000 - 3.000</label>
-        </div>
-        <div className="RadioButton">
-          <input
-            name={'salary'}
-            type="radio"
-            value={'3.000 - 4.000'}
-            onChange={handleChange}
-          />
-          <label htmlFor="">3.000 - 4.000</label>
-        </div>
-        <div className="RadioButton">
-          <input
-            name={'salary'}
-            type="radio"
-            value={'Mehr als 4.000'}
-            onChange={handleChange}
-          />
-          <label htmlFor="">Mehr als 4.000</label>
-        </div>
-
-        <Button onClick={nextStep}>Next</Button>
+        <RadioGroup>
+          <div className="RadioButton">
+            <input
+              name="salary"
+              type="radio"
+              value={'0 - 1.000'}
+              onChange={handleChange}
+            />
+            <label htmlFor="">0 - 1.000</label>
+          </div>
+          <div className="RadioButton">
+            <input
+              name="salary"
+              type="radio"
+              value={'1.000 - 2.000'}
+              onChange={handleChange}
+            />
+            <label htmlFor="">1.000 - 2.000</label>
+          </div>
+          <div className="RadioButton">
+            <input
+              name="salary"
+              type="radio"
+              value={'2.000 - 3.000'}
+              onChange={handleChange}
+            />
+            <label htmlFor="">2.000 - 3.000</label>
+          </div>
+          <div className="RadioButton">
+            <input
+              name="salary"
+              type="radio"
+              value={'3.000 - 4.000'}
+              onChange={handleChange}
+            />
+            <label htmlFor="">3.000 - 4.000</label>
+          </div>
+          <div className="RadioButton">
+            <input
+              name="salary"
+              type="radio"
+              value={'Mehr als 4.000'}
+              onChange={handleChange}
+            />
+            <label htmlFor="">Mehr als 4.000</label>
+          </div>
+        </RadioGroup>
+        <ButtonContainer>
+          <Button text={'Back'} typeButton="back" onClick={previousStep} />
+          <Button text={'Next'} typeButton="next" onClick={nextStep} />
+        </ButtonContainer>
       </Container>
     </AnimationContainer>
   );

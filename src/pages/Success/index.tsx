@@ -4,6 +4,9 @@ import { useForm } from '../../hooks/FormContext';
 
 import { Container, AnimationContainer } from './styles';
 
+import Lottie from 'react-lottie';
+import animationData from '../../lotties/5595-success-animation.json';
+
 import Button from '../../component/Button';
 
 const Confirm: React.FC = () => {
@@ -21,13 +24,24 @@ const Confirm: React.FC = () => {
     });
   };
 
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   return (
     <AnimationContainer>
       <Container>
         <h2>Success!</h2>
         <h3>Thank you for submitting</h3>
-
-        <Button onClick={goHome}>Back to Home</Button>
+        <div>
+          <Lottie options={defaultOptions} height={400} width={400} />
+        </div>
+        <Button text={'Back to Home'} onClick={goHome} />
       </Container>
     </AnimationContainer>
   );

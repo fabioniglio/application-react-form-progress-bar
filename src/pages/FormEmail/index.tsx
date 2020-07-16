@@ -65,18 +65,15 @@ const FormEmail: React.FC = () => {
           id="name"
           name="email"
           type="email"
+          value={form.email}
           placeholder="E-mail"
           required={true}
           onChange={handleChange}
         />
         {error && <span>Missing Email</span>}
         <ButtonContainer>
-          <Button typeButton="back" onClick={previousStep}>
-            Back
-          </Button>
-          <Button typeButton="next" onClick={nextStep}>
-            Next
-          </Button>
+          <Button text={'Back'} typeButton="back" onClick={previousStep} />
+          <Button text={'Next'} typeButton="next" onClick={nextStep} />
         </ButtonContainer>
       </Container>
     </AnimationContainer>
