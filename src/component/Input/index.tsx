@@ -75,6 +75,8 @@ export const InputControlText = (props: Props): JSX.Element => {
           regions={'europe'}
           value={value}
           onChange={onChangePhone}
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
           searchStyle={{ background: '#232129' }}
           buttonStyle={{ background: '#232129' }}
           dropdownStyle={{ background: '#232129' }}
