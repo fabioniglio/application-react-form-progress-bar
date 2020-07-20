@@ -26,6 +26,7 @@ export interface Props {
     data: CountryData | {},
     event: React.ChangeEvent<HTMLInputElement>,
   ) => void;
+  isValidPhone?: (value: string, country: object) => boolean;
 }
 
 export const InputControlText = (props: Props): JSX.Element => {
@@ -39,6 +40,7 @@ export const InputControlText = (props: Props): JSX.Element => {
     errors,
     onChange,
     onChangePhone,
+    isValidPhone,
   } = props;
 
   const [isFocused, setIsFocused] = useState(false);
@@ -77,16 +79,20 @@ export const InputControlText = (props: Props): JSX.Element => {
           onChange={onChangePhone}
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
-          searchStyle={{ background: '#232129' }}
-          buttonStyle={{ background: '#232129' }}
-          dropdownStyle={{ background: '#232129' }}
-          containerStyle={{ background: '#232129' }}
+          autoFormat={true}
+          isValid={isValidPhone}
+          countryCodeEditable={false}
+          searchStyle={{ background: '#fff' }}
+          buttonStyle={{ background: '#fff' }}
+          dropdownStyle={{ background: '#fff' }}
+          containerStyle={{ background: '#fff' }}
           inputStyle={{
             flex: 1,
             border: 0,
-            background: '#232129',
+            background: '#fff',
             height: '100%',
-            // color: '#f4ede8',
+            color: '#232129',
+            fontWeight: 'bold',
             width: '100%',
           }}
         />

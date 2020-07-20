@@ -16,25 +16,34 @@ export const AnimationContainer = styled.div`
   animation: ${appearFromRight} 1s;
 `;
 
-export const Title = styled.div`
-  font-size: 30px;
-  color: #204051;
-  margin-bottom: 16px;
-`;
-
 export const Container = styled.div`
   display: flex;
   width: 100%;
-  margin-top: 24px;
+  margin: 24px 0;
+  height: 500px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
+export const Title = styled.div`
+  font-size: 40px;
+  color: #204051;
+  margin: 24px 0;
+  text-align: center;
+`;
+
+export const Error = styled.div`
+  span {
+    color: #c53030;
+  }
+`;
+
 export const ButtonContainer = styled.div`
-  margin-top: 24px;
+  margin: 32px 0;
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 80%;
+  max-width: 670px;
   justify-content: space-between;
 `;

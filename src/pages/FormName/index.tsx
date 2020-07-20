@@ -50,7 +50,7 @@ const FormName: React.FC = () => {
   return (
     <AnimationContainer>
       <Container>
-        <Title>What is your Full Name?</Title>
+        <Title>What is your full name?</Title>
         <InputControlText
           id="name"
           name="name"
@@ -62,7 +62,7 @@ const FormName: React.FC = () => {
           errors={error}
         />
         {error && <span>Missing Name</span>}
-        <Button text={'Next'} onClick={nextStep} />
+        <Button text={'Next'} typeButton="next" onClick={nextStep} />
       </Container>
     </AnimationContainer>
   );

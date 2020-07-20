@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
@@ -40,26 +40,44 @@ const Formphone: React.FC = () => {
     });
   };
 
-  const handleChange = (
-    value: string,
-    data: CountryData | {},
-    e: React.FormEvent<HTMLInputElement>,
-  ) => {
-    e.persist();
-    console.log(value);
-    console.log(data);
-    const target = e.target as HTMLTextAreaElement;
-    console.log(target);
-    if (target === null) {
-      return;
-    }
-    formUpdate({
-      ...form,
-      phone: target.value,
-    });
+  const handleChange = useCallback(
+    (
+      value: string,
+      data: CountryData | {},
+      e: React.FormEvent<HTMLInputElement>,
+    ) => {
+      e.persist();
+      console.log(value);
+      console.log(data);
 
-    console.log(form);
-  };
+      const target = e.target as HTMLTextAreaElement;
+      console.log(target);
+      if (target === null) {
+        if (!data) {
+          formUpdate({
+            ...form,
+            phone: '',
+          });
+        }
+
+        return;
+      }
+      formUpdate({
+        ...form,
+        phone: target.value,
+      });
+
+      console.log(form);
+    },
+    [form, formUpdate],
+  );
+
+  const handleIsValidPhone = useCallback((value, country) => {
+    if (value.match()) {
+    }
+
+    return true;
+  }, []);
 
   return (
     <AnimationContainer>
@@ -73,6 +91,7 @@ const Formphone: React.FC = () => {
           placeholder="Phone"
           required={true}
           onChangePhone={handleChange}
+          isValidPhone={(value, country) => handleIsValidPhone(value, country)}
         />
 
         <ButtonContainer>

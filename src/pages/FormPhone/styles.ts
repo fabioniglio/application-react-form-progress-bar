@@ -17,14 +17,16 @@ export const AnimationContainer = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 30px;
+  font-size: 40px;
   color: #204051;
   margin-bottom: 10px;
+  text-align: center;
 `;
 
 export const Container = styled.div`
   display: flex;
   width: 100%;
+  height: 500px;
   margin-top: 20px;
   flex-direction: column;
   align-items: center;
@@ -35,6 +37,7 @@ export const ButtonContainer = styled.div`
   margin-top: 20px;
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 80%;
+  max-width: 670px;
   justify-content: space-between;
 `;

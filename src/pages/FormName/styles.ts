@@ -17,7 +17,8 @@ export const AnimationContainer = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 30px;
+  font-size: 40px;
+  text-align: center;
   color: #204051;
   margin-bottom: 16px;
 `;
@@ -27,16 +28,13 @@ export const Container = styled.div`
   width: 100%;
   margin-top: 20px;
   flex-direction: column;
+  height: 500px;
   align-items: center;
   justify-content: center;
 
   button {
-    display: flex;
-    flex-direction: column;
     margin-top: 24px;
-    width: 50%;
-    align-items: center;
-    justify-content: center;
+    width: 70%;
   }
 
   span {

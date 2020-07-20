@@ -33,7 +33,7 @@ const Confirm: React.FC = () => {
           <h3>{form.phone}</h3>
         </Content>
         <Content>
-          <h2>salary </h2>
+          <h2>Salary </h2>
           <h3>{form.salary}</h3>
         </Content>
 

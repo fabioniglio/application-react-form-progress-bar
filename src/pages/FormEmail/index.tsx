@@ -9,6 +9,7 @@ import {
   AnimationContainer,
   Title,
   ButtonContainer,
+  Error,
 } from './styles';
 
 import Button from '../../component/Button';
@@ -21,6 +22,7 @@ const FormEmail: React.FC = () => {
     const validate = validateInput();
 
     if (validate) {
+      setError(false);
       let { step } = form;
       console.log(step);
       formUpdate({
@@ -47,6 +49,9 @@ const FormEmail: React.FC = () => {
       ...form,
       email: target.value,
     });
+    if (form.email) {
+      setError(false);
+    }
     console.log(form);
   };
 
@@ -60,7 +65,7 @@ const FormEmail: React.FC = () => {
   return (
     <AnimationContainer>
       <Container>
-        <Title>What is your Email?</Title>
+        <Title>What is your email?</Title>
         <InputControlText
           id="name"
           name="email"
@@ -69,8 +74,13 @@ const FormEmail: React.FC = () => {
           placeholder="E-mail"
           required={true}
           onChange={handleChange}
+          errors={error}
         />
-        {error && <span>Missing Email</span>}
+        {error && (
+          <Error>
+            <span>Missing Email</span>
+          </Error>
+        )}
         <ButtonContainer>
           <Button text={'Back'} typeButton="back" onClick={previousStep} />
           <Button text={'Next'} typeButton="next" onClick={nextStep} />

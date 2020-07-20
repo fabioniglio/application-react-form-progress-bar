@@ -28,6 +28,7 @@ function LinearProgressWithLabel(
 const useStyles = makeStyles({
   root: {
     width: '100%',
+    marginTop: '24px;',
   },
 });
 

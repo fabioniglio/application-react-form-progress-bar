@@ -13,19 +13,22 @@ export const Container = Styled.button<ContainerProps>`
       padding: 0 16px;
       color: #312e38;
       width: 100%;
+      max-width:670px;
       font-weight: 500;
-      margin-top: 16px;
-      transition: background-color 0.2s;
+      margin:24px 12px;
 
-      span {
-        color: white;
-      }
+      transition: background-color 0.2s, border 0.2s;
 
 
       ${props =>
         props.typeButton === 'next' &&
         css`
           background: #002f34;
+
+          span {
+            color: #fff;
+            font-weight: bold;
+          }
 
           &:hover {
             background: ${shade(0.2, '#002f34')};
@@ -35,16 +38,28 @@ export const Container = Styled.button<ContainerProps>`
         ${props =>
           props.typeButton === 'back' &&
           css`
-            background: #c53030;
+            background: #fff;
+            border: 3px solid #002f34;
+
+            span {
+              color: #002f34;
+              font-weight: bold;
+            }
 
             &:hover {
-              background: ${shade(0.2, '#c53030')};
+              border: 6px solid #002f34;
+              transition: border 0.5s;
             }
           `}
           ${props =>
             props.typeButton === undefined &&
             css`
               background: #002f34;
+
+              span {
+                color: #fff;
+                font-weight: bold;
+              }
 
               &:hover {
                 background: ${shade(0.2, '#002f34')};

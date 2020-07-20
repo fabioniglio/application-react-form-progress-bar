@@ -37,7 +37,7 @@ const Confirm: React.FC = () => {
     <AnimationContainer>
       <Container>
         <h2>Success!</h2>
-        <h3>Thank you for submitting</h3>
+        <h3>Thank you for submitting!</h3>
         <div>
           <Lottie options={defaultOptions} height={400} width={400} />
         </div>

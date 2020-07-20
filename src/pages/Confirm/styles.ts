@@ -19,6 +19,7 @@ export const AnimationContainer = styled.div`
 export const Container = styled.div`
   display: flex;
   width: 100%;
+
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -26,28 +27,28 @@ export const Container = styled.div`
   margin-top: 20px;
 
   button {
-    display: flex;
-    flex-direction: column;
     margin-top: 20px;
-
-    align-items: center;
-    justify-content: center;
+    width: 60%;
   }
 `;
 
 export const Content = styled.div`
   display: flex;
+
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
   justify-content: center;
+  margin-top: 20px;
+
   margin-top: auto 20px 0 0;
 
   h2 {
     margin-top: 20px;
+    text-align: center;
   }
 
   h3 {
     margin-top: 10px;
+    text-align: center;
   }
 `;

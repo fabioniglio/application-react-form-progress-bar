@@ -18,7 +18,6 @@ export const AnimationContainer = styled.div`
 
 export const Container = styled.div`
   display: flex;
-  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -27,13 +26,17 @@ export const Container = styled.div`
 
   h2 {
     margin-top: 20px;
+    text-align: center;
   }
 
   h3 {
     margin-top: 20px;
+    text-align: center;
   }
 
   button {
     margin-top: 20px;
+
+    width: 60%;
   }
 `;

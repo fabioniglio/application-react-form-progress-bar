@@ -21,7 +21,7 @@ const Confirm: React.FC = () => {
     <Container>
       <AnimationContainer>
         <h1>Welcome!</h1>
-        <p>Click on the button to start filling the form!</p>
+        <h2>Click on the button to start filling the form!</h2>
 
         <Button text={'Start'} onClick={enterForm} />
       </AnimationContainer>

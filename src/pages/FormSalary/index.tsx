@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
@@ -8,19 +8,28 @@ import {
   Title,
   RadioGroup,
   ButtonContainer,
+  Error,
 } from './styles';
 
 import Button from '../../component/Button';
 
 const Formsalary: React.FC = () => {
+  const [error, setError] = useState(false);
+
   const { form, formUpdate } = useForm();
   const nextStep = () => {
-    let { step } = form;
-    console.log(step);
-    formUpdate({
-      ...form,
-      step: step + 1,
-    });
+    const validate = checkIfSalaryIsChecked();
+
+    if (validate) {
+      let { step } = form;
+      console.log(step);
+      formUpdate({
+        ...form,
+        step: step + 1,
+      });
+    } else {
+      setError(true);
+    }
   };
 
   const previousStep = () => {
@@ -39,6 +48,16 @@ const Formsalary: React.FC = () => {
       salary: target.value,
     });
     console.log(form);
+    if (checkIfSalaryIsChecked()) {
+      setError(false);
+    }
+  };
+
+  const checkIfSalaryIsChecked = (): boolean => {
+    if (!form.salary) {
+      return false;
+    }
+    return true;
   };
 
   return (
@@ -92,6 +111,11 @@ const Formsalary: React.FC = () => {
             <label htmlFor="">Mehr als 4.000</label>
           </div>
         </RadioGroup>
+        {error && (
+          <Error>
+            <span>Select one of the options</span>
+          </Error>
+        )}
         <ButtonContainer>
           <Button text={'Back'} typeButton="back" onClick={previousStep} />
           <Button text={'Next'} typeButton="next" onClick={nextStep} />

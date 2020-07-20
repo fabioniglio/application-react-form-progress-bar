@@ -19,32 +19,22 @@ export const AnimationContainer = styled.div`
 export const Container = styled.div`
   display: flex;
   width: 100%;
+  height: 500px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
   h1 {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    justify-content: center;
-    align-items: center;
+    margin-top: 32px;
+    text-align: center;
   }
 
-  p {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    justify-content: center;
-    align-items: center;
+  h2 {
+    margin-top: 32px;
+    text-align: center;
   }
 
   button {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    margin-top: 20px;
-    justify-content: center;
-    align-items: center;
+    margin-top: 48px;
   }
 `;

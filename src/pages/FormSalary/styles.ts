@@ -17,13 +17,15 @@ export const AnimationContainer = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 30px;
+  font-size: 40px;
   color: #204051;
+  text-align: center;
 `;
 
 export const Container = styled.div`
   display: flex;
   width: 100%;
+  height: 500px;
   margin-top: 20px;
   flex-direction: column;
   align-items: center;
@@ -39,12 +41,8 @@ export const Container = styled.div`
   }
 
   button {
-    display: flex;
-    flex-direction: column;
     margin-top: 20px;
-    width: 50%;
-    align-items: center;
-    justify-content: center;
+    width: 40%;
   }
 `;
 
@@ -53,9 +51,16 @@ export const RadioGroup = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-  margin-top: 20px;
+  margin: 32px 0;
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 80%;
+  max-width: 670px;
   justify-content: space-between;
+`;
+
+export const Error = styled.div`
+  span {
+    color: #c53030;
+  }
 `;
