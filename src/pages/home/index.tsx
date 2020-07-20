@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LinearWithValueLabel from '../../component/ProgressBar';
+import LinearWithValueLabel from '../../components/ProgressBar';
 
 import Form from '../Form';
 

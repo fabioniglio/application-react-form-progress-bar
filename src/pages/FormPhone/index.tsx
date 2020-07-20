@@ -2,8 +2,6 @@ import React, { useCallback } from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
-import { InputControlText } from '../../component/Input';
-
 import {
   Container,
   AnimationContainer,
@@ -11,7 +9,8 @@ import {
   ButtonContainer,
 } from './styles';
 
-import Button from '../../component/Button';
+import { InputControlText } from '../../components/Input';
+import Button from '../../components/Button';
 
 interface CountryData {
   name: string;

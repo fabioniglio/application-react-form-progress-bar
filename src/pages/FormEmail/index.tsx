@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { useForm } from '../../hooks/FormContext';
 
-import { InputControlText } from '../../component/Input';
+import { InputControlText } from '../../components/Input';
 
 import {
   Container,
@@ -12,7 +12,7 @@ import {
   Error,
 } from './styles';
 
-import Button from '../../component/Button';
+import Button from '../../components/Button';
 
 const FormEmail: React.FC = () => {
   const { form, formUpdate } = useForm();

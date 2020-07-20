@@ -11,7 +11,7 @@ import {
   Error,
 } from './styles';
 
-import Button from '../../component/Button';
+import Button from '../../components/Button';
 
 const Formsalary: React.FC = () => {
   const [error, setError] = useState(false);

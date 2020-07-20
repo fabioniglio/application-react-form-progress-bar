@@ -7,7 +7,7 @@ import { Container, AnimationContainer } from './styles';
 import Lottie from 'react-lottie';
 import animationData from '../../lotties/5595-success-animation.json';
 
-import Button from '../../component/Button';
+import Button from '../../components/Button';
 
 const Confirm: React.FC = () => {
   const { form, formUpdate } = useForm();

@@ -4,7 +4,7 @@ import { useForm } from '../../hooks/FormContext';
 
 import { Container, AnimationContainer, Content } from './styles';
 
-import Button from '../../component/Button';
+import Button from '../../components/Button';
 
 const Confirm: React.FC = () => {
   const { form, formUpdate } = useForm();
