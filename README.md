@@ -29,3 +29,5 @@ On `test:coverage` we will generate a report and a folder call coverage on the m
 - Refactor the code to use more the props and also create a FormSchema in which we could create different forms with different questions and reduce the number of pages that has same business logic.
 - Improve the radio button style
 - improve validation of values on input
+
+# Happy Coding 😀🚀
