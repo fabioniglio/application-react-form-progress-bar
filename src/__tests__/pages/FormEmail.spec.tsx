@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
-import FormName from '../../pages/FormName';
+import FormEmail from '../../pages/FormEmail';
 
 const mockedFormUpdate = jest.fn();
 
@@ -14,14 +14,14 @@ jest.mock('../../hooks/FormContext', () => {
   };
 });
 
-describe('Form Name Page', () => {
-  it('should be able to fill on the input a name', () => {
-    const { getByPlaceholderText, getByText } = render(<FormName />);
+describe('Form Email Page', () => {
+  it('should be able to fill on the input a email', () => {
+    const { getByPlaceholderText, getByText } = render(<FormEmail />);
 
-    const nameField = getByPlaceholderText('Full Name');
+    const nameField = getByPlaceholderText('E-mail');
     const buttonElement = getByText('Next');
 
-    fireEvent.change(nameField, { target: { value: ' Fabio Niglio' } });
+    fireEvent.change(nameField, { target: { value: 'fabioniglio@gmail.com' } });
 
     fireEvent.click(buttonElement);
 
