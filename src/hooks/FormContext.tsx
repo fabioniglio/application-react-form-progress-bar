@@ -51,9 +51,5 @@ export const FormProvider: React.FC = ({ children }) => {
 export function useForm(): FormContextData {
   const context = useContext(FormContext);
 
-  if (!context) {
-    throw new Error('useForm must be form within FormProvider');
-  }
-
   return context;
 }
