@@ -9,6 +9,8 @@ Typescript ⌨️ <br />
 Hooks <br />
 Styled Components
 
+<img src="assets/demo.gif" />
+
 In the project directory, you can run:
 
 ### `yarn start` or `npm start`
